@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TextView 
+        android:id="@+id/head"
+        android:paddingLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="A"
+        android:textSize="24sp"
+        android:textColor="#ffffff"
+        android:gravity="center_vertical"
+        android:background="#aaaaaa"
+        />
+    <TextView 
+        android:id="@+id/name"
+        android:textSize="18sp"
+        android:paddingLeft="5dp"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="50dp"
+        android:text="宋江"/>
+
+</LinearLayout>
