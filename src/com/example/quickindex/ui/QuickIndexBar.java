@@ -19,7 +19,7 @@ public class QuickIndexBar extends View {
 
 	private static final String[] LETTERS = new String[] { "A", "B", "C", "D",
 			"E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q",
-			"R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
+			"R", "S", "T", "U", "V", "W", "X", "Y", "Z","#" };
 	private Paint mPaint;
 	private float cellWidth;
 	private float cellHeight;
@@ -57,8 +57,10 @@ public class QuickIndexBar extends View {
 		super(context, attrs, defStyleAttr);
 		mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 		mPaint.setColor(0xff888888);
-		mPaint.setTextSize(30);
+//		int textSize = (int)cellHeight/2;
+//		mPaint.setTextSize(30);
 		mPaint.setTypeface(Typeface.DEFAULT_BOLD);
+		
 
 	}
 
@@ -72,6 +74,8 @@ public class QuickIndexBar extends View {
 			int x = (int) (cellWidth / 2.0f - mPaint.measureText(text) / 2.0f);
 			// 获取文本高度
 			Rect bounds = new Rect();
+			//设置字体大小为cellHeight的三分之二大小
+			mPaint.setTextSize(cellHeight/1.5f);
 			mPaint.getTextBounds(text, 0, text.length(), bounds);
 			int textHeight = bounds.height();
 			int y = (int) (cellHeight / 2.0f + textHeight / 2.0f + i
