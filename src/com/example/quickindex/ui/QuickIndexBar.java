@@ -20,10 +20,13 @@ public class QuickIndexBar extends View {
 	private static final String[] LETTERS = new String[] { "A", "B", "C", "D",
 			"E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q",
 			"R", "S", "T", "U", "V", "W", "X", "Y", "Z","#" };
+	//画笔
 	private Paint mPaint;
+	//每个字母所在的矩形的宽高
 	private float cellWidth;
 	private float cellHeight;
 	
+	//回调接口
 	private OnLetterUpdateListener mOnLetterUpdateListener;
 
 	/*
@@ -82,7 +85,7 @@ public class QuickIndexBar extends View {
 					* cellHeight);
 
 			// 根据按下的字母, 设置画笔颜色
-//			mPaint.setColor(touchIndex == i ? Color.GRAY : Color.BLACK);
+			mPaint.setColor(touchIndex == i ? Color.BLACK : Color.GRAY);
 			canvas.drawText(text, x, y, mPaint);
 		}
 	}
@@ -104,6 +107,7 @@ public class QuickIndexBar extends View {
 			break;
 		case MotionEvent.ACTION_UP:
 			index = -1;
+			touchIndex = -1;
 			break;
 		case MotionEvent.ACTION_MOVE:
 			index = (int) (event.getY() / cellHeight);
